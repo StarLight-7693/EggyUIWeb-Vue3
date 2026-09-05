@@ -1,0 +1,52 @@
+{
+  "title": "EggyUI",
+  "description": "一款以《蛋仔派对》的Q萌画风为主体而美化的系统。",
+  "versions": [
+    {
+      "id": "eggyui-legacy",
+      "type": "EggyUI-Legacy",
+      "version": "v3.5",
+      "fileSize": "72.00 GB（包含全部版本）",
+      "updateDate": "2026-05-25",
+      "description": "EggyUI项目的历史版本（即EggyUI 1.0~3.5）已更名为EggyUI-Legacy。",
+      "image": "https://eggyreshub.wordpress.com/wp-content/uploads/2026/05/eggyui_3.5_promo.jpg",
+      "downloadUrl": "https://www.123pan.com/s/BWy7Td-ObpD3"
+    },
+    {
+      "id": "win11.2",
+      "type": "EGGY UI 2.0",
+      "version": "v2.0.0",
+      "fileSize": "31.76 MB",
+      "updateDate": "2026-08-31",
+      "description": "第二代EGGY UI，体验更好！",
+      "image": "https://your-cdn.com/pro-edition.png"
+    },
+    {
+      "id": "win11.3",
+      "type": "EGGY UI 3.0",
+      "version": "v3.0.0",
+      "fileSize": "5.11 GB",
+      "updateDate": "2026-08-31",
+      "description": "第三代EGGY UI，体验更好！加入新功能！",
+      "image": "https://your-cdn.com/pro-edition.png"
+    },
+    {
+      "id": "win7",
+      "type": "Eggy UI for Windows7",
+      "version": "v1.0.0",
+      "fileSize": "2.97 GB",
+      "updateDate": "2026-08-31",
+      "description": "兼容性更好，推荐老电脑使用",
+      "image": "https://your-cdn.com/pro-edition.png"
+    },
+    {
+      "id": "win11.3.5",
+      "type": "EGGY UI 3.5",
+      "version": "v3.5.0",
+      "fileSize": "6.39 GB",
+      "updateDate": "2026-08-31",
+      "description": "3.5版本，优化玻璃屏注（此镜像大小过大，请谨慎下载）",
+      "image": "https://your-cdn.com/pro-edition.png"
+    }
+  ]
+}

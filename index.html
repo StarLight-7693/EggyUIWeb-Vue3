@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EggyUI 官网</title>
+    <meta
+      name="description"
+      content="EggyUI，一款以《蛋仔派对》的Q萌画风为主体而美化的系统。"
+    />
+    <meta
+      name="keywords"
+      content="eggyui下载,eggyui官网,eggyui1.0,ehhyui,EGGYUI,EggyUI-RE,EggyUI"
+    />
+    <!-- 网站字体（CDN 直引，配置同 StarLight-7693.github.io.react；Cascadia Code 不使用） -->
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/segoe-pro" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/noto-sans-sc@37.0.0/noto_sans_sc_medium/css.min.css" />
+    <script>
+      // ============================================================
+      // GitHub Pages 深链回退恢复（配合 public/404.html）
+      // 404 页会把原始访问地址写入 sessionStorage.redirect，
+      // 本脚本在应用启动前把地址还原到 history，使 /download 等
+      // 深链在刷新后仍能正确渲染（history 路由模式）。
+      // ============================================================
+      ;(function () {
+        var redirect = sessionStorage.getItem('redirect')
+        sessionStorage.removeItem('redirect')
+        if (redirect && redirect !== window.location.href) {
+          try {
+            var target = new URL(redirect, window.location.origin)
+            var current = new URL(window.location.href)
+            if (target.origin === current.origin) {
+              window.history.replaceState(
+                null,
+                '',
+                target.pathname + target.search + target.hash,
+              )
+            }
+          } catch (e) {
+            /* 忽略非法地址 */
+          }
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+@use 'variables' as *;
+
+// ============================================================
+// 全局基础样式（仅整站引入一次：src/styles/index.scss）
+// 重置 · 字体 · 滚动条 · 通用工具类
+// ============================================================
+
+// 字体改为 CDN 引入（index.html：Segoe Pro + Noto Sans SC），不再打包本地 U5 字体。
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-brand;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background: $home-bg;
+  color: $home-ink;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// SVG 全局对齐修复（原站惯例）
+svg {
+  vertical-align: middle;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+// 滚动条
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: $surface-2;
+}
+::-webkit-scrollbar-thumb {
+  background: #c5c9d4;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a8aebb;
+}
+
+// 通用旋转动画（多处复用）
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// ---- 工具类 ----
+.hidden {
+  display: none !important;
+}
+.text-center {
+  text-align: center;
+}
+.w-full {
+  width: 100%;
+}
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

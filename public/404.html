@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>正在重定向…</title>
+  <script>
+    // ============================================================
+    // GitHub Pages history 路由回退（配合 index.html 内联恢复脚本）
+    // 把当前（可能 404 的）深链地址存入 sessionStorage，
+    // 再跳回应用根路径；index.html 启动时会把地址还原交给 Vue Router。
+    //
+    // 注意：下方根路径需与 vite.config.ts 顶部 BASE 常量保持一致！
+    // ============================================================
+    sessionStorage.setItem('redirect', window.location.href)
+    window.location.replace('/EggyUIWeb-Vue3/')
+  </script>
+</head>
+<body>
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=/EggyUIWeb-Vue3/" />
+    <p>本页面需要 JavaScript。若未被重定向，请
+      <a href="/EggyUIWeb-Vue3/">点此访问首页</a>。</p>
+  </noscript>
+</body>
+</html>

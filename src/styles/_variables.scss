@@ -1,0 +1,75 @@
+// ============================================================
+// EggyUI 官网 · SCSS 设计变量（源自原站 CSS 品牌体系）
+// ============================================================
+
+// ---- 字体（CDN 引入：fonts.cdnfonts.com/css/segoe-pro + Noto Sans SC）
+$font-ui: 'Segoe Pro Display', 'Segoe Pro', 'Segoe UI', 'Noto Sans SC',
+  'Microsoft YaHei', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+$font-brand: $font-ui;
+
+// ---- 首页（index）----
+$home-bg: #f5f7fa;
+$home-ink: #1a1a2e;
+$home-muted: rgba(26, 26, 46, 0.5);
+$home-faint: rgba(26, 26, 46, 0.2);
+$brand-1: #4a6cf7; // 主蓝
+$brand-2: #6c5ce7; // 渐变尾色
+$brand-grad: linear-gradient(135deg, #4a6cf7 0%, #6c5ce7 60%);
+$line: rgba(0, 0, 0, 0.04);
+$card-bg: #ffffff;
+$surface: #f0f2f6;
+$surface-2: #eef0f4;
+
+// ---- Header 毛玻璃 ----
+$hdr-bg: rgba(255, 255, 255, 0.75);
+$hdr-bg-scrolled: rgba(255, 255, 255, 0.9);
+$hdr-text: #0f172a;
+$hdr-muted: #475569;
+$hdr-faint: #94a3b8;
+$hdr-indigo: #4f46e5;
+$hdr-violet: #7c3aed;
+$hdr-pink: #ec4899;
+$hdr-btn-grad: linear-gradient(135deg, #4f46e5, #7c3aed);
+$hdr-load-grad: linear-gradient(90deg, #4f46e5, #7c3aed, #ec4899);
+
+// ---- 下载页 ----
+$dl-bg: #f8fafc;
+$dl-ink: #0b1a2e;
+$dl-muted: #475569;
+$dl-faint: #94a3b8;
+$dl-border: #e2e8f0;
+$dl-soft: #f1f5f9;
+$dl-blue: #2563eb;
+$dl-blue-deep: #1d4ed8;
+$dl-blue-hover: #2b6cf5;
+$dl-blue-deep-hover: #1a4bbf;
+$dl-indigo: #6366f1;
+$dl-btn-grad: linear-gradient(135deg, #2563eb, #1d4ed8);
+$dl-success: #22c55e;
+$dl-error: #ef4444;
+$dl-info: #3b82f6;
+
+// ---- 圆角 ----
+$radius-sm: 12px;
+$radius-md: 18px;
+$radius-lg: 28px;
+$radius-full: 40px;
+
+// ---- 阴影 ----
+$shadow-card: 0 2px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+$shadow-float: 0 8px 40px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02);
+
+// ---- 断点 ----
+$bp-lg: 1024px;
+$bp-md: 820px;
+$bp-sm: 768px;
+$bp-xs: 640px;
+$bp-2xs: 600px;
+$bp-3xs: 500px;
+$bp-4xs: 400px;
+
+// ---- 尺寸 ----
+$header-h: 72px;
+$header-h-md: 64px;
+$header-h-xs: 60px;
+$container-max: 1200px;
