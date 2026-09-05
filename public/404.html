@@ -7,20 +7,30 @@
   <script>
     // ============================================================
     // GitHub Pages history 路由回退（配合 index.html 内联恢复脚本）
-    // 把当前（可能 404 的）深链地址存入 sessionStorage，
-    // 再跳回应用根路径；index.html 启动时会把地址还原交给 Vue Router。
     //
-    // 注意：下方根路径需与 vite.config.ts 顶部 BASE 常量保持一致！
+    // 修复无限重定向：
+    //  - 不写死绝对路径（避免自定义域名根路径 / 项目页子路径不一致时
+    //    404 → 不存在路径 → 404 → … 死循环）；
+    //  - 改为“回到当前 URL 所在目录”（应用根目录），base-agnostic；
+    //  - 若本页本身就在应用根目录，则不再跳转，防止自循环。
+    //
+    // index.html 启动时读取 sessionStorage.redirect 并还原深链。
     // ============================================================
-    sessionStorage.setItem('redirect', window.location.href)
-    window.location.replace('/EggyUIWeb-Vue3/')
+    ;(function () {
+      var path = window.location.pathname
+      var root = path.substring(0, path.lastIndexOf('/') + 1)
+      sessionStorage.setItem('redirect', window.location.href)
+      if (root !== path) {
+        window.location.replace(root)
+      }
+    })()
   </script>
 </head>
 <body>
   <noscript>
-    <meta http-equiv="refresh" content="0;url=/EggyUIWeb-Vue3/" />
+    <meta http-equiv="refresh" content="0;url=./" />
     <p>本页面需要 JavaScript。若未被重定向，请
-      <a href="/EggyUIWeb-Vue3/">点此访问首页</a>。</p>
+      <a href="./">点此访问首页</a>。</p>
   </noscript>
 </body>
 </html>

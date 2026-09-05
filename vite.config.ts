@@ -9,7 +9,7 @@ import { defineConfig } from 'vite'
 // 部署前请把下面常量改为实际仓库名，
 // 例如项目仓库 EggyUIWeb-Vue3 → '/EggyUIWeb-Vue3/'
 // ============================================================
-const BASE = '/EggyUIWeb-Vue3/'
+const BASE = '/'
 
 // https://vite.dev/config/
 export default defineConfig({
