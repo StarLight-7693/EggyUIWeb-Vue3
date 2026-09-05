@@ -2,6 +2,7 @@
 import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 import logo from '@/assets/images/logo.png'
+import { SITE } from '@/config'
 
 // 原站 header.js 行为（TS 化）：汉堡开合 / ESC / 点外关闭 / 滚动 .scrolled / 加载进度条 / 按钮特效
 const navOpen = ref(false)
@@ -10,8 +11,27 @@ const progressActive = ref(false)
 const progressDone = ref(false)
 const progressWidth = ref(0)
 const btnPop = ref(false)
+const searchQuery = ref('')
 
 const route = useRoute()
+
+// 搜索 → 跳转新闻站本地搜索结果页（跨站，与新闻站 header 搜索行为一致）
+function submitSearch() {
+  const q = searchQuery.value.trim()
+  if (q) {
+    window.location.href = `${SITE.newsUrl}/search/?q=${encodeURIComponent(q)}`
+  } else {
+    const input = document.querySelector<HTMLInputElement>('.search-wrapper input')
+    input?.focus()
+  }
+}
+
+function onSearchKeydown(e: KeyboardEvent) {
+  if (e.key === 'Enter') {
+    e.preventDefault()
+    submitSearch()
+  }
+}
 
 function setScrollLock(lock: boolean) {
   document.body.style.overflow = lock ? 'hidden' : ''
@@ -127,11 +147,36 @@ onBeforeUnmount(() => {
     <ul class="nav-links" :class="{ open: navOpen }" role="navigation">
       <li><RouterLink to="/">首页</RouterLink></li>
       <li><RouterLink to="/download">下载</RouterLink></li>
+      <!-- 新闻为外部站点（Hexo，news 子域） -->
+      <li><a :href="SITE.newsUrl" rel="noopener">新闻</a></li>
       <li><RouterLink to="/about">关于</RouterLink></li>
     </ul>
 
     <!-- 右侧操作 -->
     <div class="actions">
+      <!-- 搜索 → 新闻站搜索结果 -->
+      <div class="search-wrapper">
+        <span
+          class="search-icon"
+          role="button"
+          aria-label="搜索新闻"
+          @click="submitSearch"
+        >
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+        </span>
+        <input
+          v-model="searchQuery"
+          type="search"
+          placeholder="搜索新闻..."
+          aria-label="搜索新闻"
+          autocomplete="off"
+          @keydown="onSearchKeydown"
+        />
+      </div>
+
       <RouterLink
         to="/download"
         class="btn btn-primary"
@@ -280,6 +325,62 @@ onBeforeUnmount(() => {
   flex-shrink: 0;
 }
 
+/* 搜索框（提交 → 新闻站搜索页） */
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  input {
+    background: rgba(0, 0, 0, 0.04);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 40px;
+    padding: 0.45rem 1rem 0.45rem 2.5rem;
+    font-size: 0.9rem;
+    color: $hdr-text;
+    font-family: inherit;
+    width: 150px;
+    outline: none;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+      color: $hdr-faint;
+    }
+    &:focus {
+      width: 185px;
+      background: rgba(255, 255, 255, 0.8);
+      border-color: $hdr-indigo;
+      box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+    }
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $hdr-muted;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    svg {
+      display: block;
+      width: 17px;
+      height: 17px;
+      stroke: currentColor;
+    }
+    &:hover {
+      color: $hdr-text;
+    }
+  }
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -405,6 +506,15 @@ onBeforeUnmount(() => {
     display: flex;
   }
 
+  .search-wrapper input {
+    width: 120px;
+    padding-left: 2.3rem;
+
+    &:focus {
+      width: 150px;
+    }
+  }
+
   .btn-primary {
     padding: 0.4rem 1rem;
     font-size: 0.85rem;
@@ -416,6 +526,10 @@ onBeforeUnmount(() => {
   .glass-header {
     padding: 0 1rem;
     height: $header-h-xs;
+  }
+
+  .search-wrapper {
+    display: none;
   }
 
   .actions .btn-primary {
