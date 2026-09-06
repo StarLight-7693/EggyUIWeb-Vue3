@@ -5,5 +5,5 @@ export const SITE = {
   /** 主站（本 SPA 所在域） */
   mainUrl: 'https://eggyui.skystarlight.top',
   /** Hexo 新闻站（news 子域） */
-  newsUrl: 'https://news.eggyui.skystarlight.top',
+  newsUrl: 'https://eggyuinews.skystarlight.top',
 } as const
