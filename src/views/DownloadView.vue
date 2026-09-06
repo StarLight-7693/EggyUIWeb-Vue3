@@ -80,8 +80,8 @@ function handleToggle(index: number) {
   inset: 0;
   z-index: 0;
   background:
-    radial-gradient(ellipse 70% 50% at 20% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 40% at 80% 80%, rgba(99, 102, 241, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 20% 20%, rgba(255, 159, 26, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 80%, rgba(255, 197, 61, 0.05) 0%, transparent 60%),
     $dl-bg;
 }
 

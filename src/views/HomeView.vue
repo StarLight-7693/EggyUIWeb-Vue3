@@ -176,7 +176,7 @@ function onCardImageLoaded(e: Event) {
   width: 100%;
   min-height: 100vh;
   min-height: 100dvh;
-  background: linear-gradient(160deg, #f7f9fc 0%, #eef2f7 50%, #e4e9f2 100%);
+  background: linear-gradient(160deg, #fffdf6 0%, #fdf6e7 50%, #f9edda 100%);
   padding: 40px 24px 32px;
   display: flex;
   flex-direction: column;
@@ -230,7 +230,7 @@ function onCardImageLoaded(e: Event) {
   position: relative;
 
   &:hover {
-    border-color: rgba(74, 108, 247, 0.15);
+    border-color: rgba(255, 159, 26, 0.15);
   }
   &:active {
     transform: scale(0.98);
@@ -295,10 +295,10 @@ function onCardImageLoaded(e: Event) {
       font-size: 14px;
       font-weight: 500;
       color: $brand-1;
-      background: rgba(74, 108, 247, 0.06);
+      background: rgba(255, 159, 26, 0.06);
       padding: 6px 22px;
       border-radius: 30px;
-      border: 1px solid rgba(74, 108, 247, 0.08);
+      border: 1px solid rgba(255, 159, 26, 0.08);
       transition: background 0.3s ease, transform 0.3s ease;
       line-height: 1.4;
 
@@ -315,7 +315,7 @@ function onCardImageLoaded(e: Event) {
   }
 
   &:hover .card-content .arrow-hint {
-    background: rgba(74, 108, 247, 0.12);
+    background: rgba(255, 159, 26, 0.12);
     svg {
       transform: translateX(4px);
     }

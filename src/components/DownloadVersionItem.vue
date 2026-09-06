@@ -155,7 +155,7 @@ function onImgError() {
   }
   &.active {
     border-color: $dl-blue;
-    box-shadow: 0 4px 28px rgba(37, 99, 235, 0.1);
+    box-shadow: 0 4px 28px rgba(255, 159, 26, 0.1);
   }
 }
 
@@ -373,7 +373,7 @@ function onImgError() {
   border-radius: 60px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 4px 20px rgba(255, 159, 26, 0.2);
   min-width: 160px;
   position: relative;
   overflow: hidden;
@@ -393,7 +393,7 @@ function onImgError() {
     opacity: 0.55;
     cursor: not-allowed;
     transform: none;
-    box-shadow: 0 2px 12px rgba(37, 99, 235, 0.1);
+    box-shadow: 0 2px 12px rgba(255, 159, 26, 0.1);
     background: linear-gradient(135deg, #94a3b8, #64748b);
   }
 }

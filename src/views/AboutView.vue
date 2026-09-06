@@ -145,7 +145,7 @@ const versions = downloadMeta.versions || []
 
 .about-page {
   min-height: 100dvh;
-  background: linear-gradient(160deg, #f7f9fc 0%, #eef2f7 50%, #e4e9f2 100%);
+  background: linear-gradient(160deg, #fffdf6 0%, #fdf6e7 50%, #f9edda 100%);
   padding: calc(#{$header-h} + 40px) 20px 56px;
 }
 
@@ -322,7 +322,7 @@ const versions = downloadMeta.versions || []
 
     &:hover {
       background: #fff;
-      border-color: rgba(74, 108, 247, 0.3);
+      border-color: rgba(255, 159, 26, 0.3);
     }
   }
 }

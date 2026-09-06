@@ -242,7 +242,7 @@ onBeforeUnmount(() => {
   background-size: 200% 100%;
   z-index: 1001;
   border-radius: 0 0 2px 2px;
-  box-shadow: 0 0 12px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 0 12px rgba(255, 159, 26, 0.3);
   transition: width 0.3s ease, opacity 0.6s ease;
   opacity: 0;
   pointer-events: none;
@@ -352,7 +352,7 @@ onBeforeUnmount(() => {
       width: 185px;
       background: rgba(255, 255, 255, 0.8);
       border-color: $hdr-indigo;
-      box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+      box-shadow: 0 0 0 4px rgba(255, 159, 26, 0.1);
     }
   }
 
@@ -401,7 +401,7 @@ onBeforeUnmount(() => {
   background: $hdr-btn-grad;
   border-color: transparent;
   color: #fff;
-  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.25);
+  box-shadow: 0 4px 16px rgba(255, 159, 26, 0.25);
 }
 
 .btn-primary.btn-click {

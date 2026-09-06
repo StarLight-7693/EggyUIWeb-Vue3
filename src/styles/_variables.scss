@@ -8,46 +8,47 @@ $font-ui: 'Segoe Pro Display', 'Segoe Pro', 'Segoe UI', 'Noto Sans SC',
 $font-brand: $font-ui;
 
 // ---- 首页（index）----
-$home-bg: #f5f7fa;
-$home-ink: #1a1a2e;
-$home-muted: rgba(26, 26, 46, 0.5);
-$home-faint: rgba(26, 26, 46, 0.2);
-$brand-1: #4a6cf7; // 主蓝
-$brand-2: #6c5ce7; // 渐变尾色
-$brand-grad: linear-gradient(135deg, #4a6cf7 0%, #6c5ce7 60%);
-$line: rgba(0, 0, 0, 0.04);
+// 主题色对齐 EggyUI 官方展示页（eggyui-official-site.html）暖黄/橙体系
+$home-bg: #fafbfc;
+$home-ink: #1d2129;
+$home-muted: rgba(29, 33, 41, 0.5);
+$home-faint: rgba(29, 33, 41, 0.22);
+$brand-1: #ff9f1a; // 主橙（强调/文字/链接）
+$brand-2: #ffc53d; // 主黄
+$brand-grad: linear-gradient(135deg, #ffc53d 0%, #ff9f1a 60%);
+$line: rgba(0, 0, 0, 0.06);
 $card-bg: #ffffff;
-$surface: #f0f2f6;
-$surface-2: #eef0f4;
+$surface: #f2f3f5;
+$surface-2: #f0f1f3;
 
 // ---- Header 毛玻璃 ----
 $hdr-bg: rgba(255, 255, 255, 0.75);
-$hdr-bg-scrolled: rgba(255, 255, 255, 0.9);
-$hdr-text: #0f172a;
-$hdr-muted: #475569;
-$hdr-faint: #94a3b8;
-$hdr-indigo: #4f46e5;
-$hdr-violet: #7c3aed;
-$hdr-pink: #ec4899;
-$hdr-btn-grad: linear-gradient(135deg, #4f46e5, #7c3aed);
-$hdr-load-grad: linear-gradient(90deg, #4f46e5, #7c3aed, #ec4899);
+$hdr-bg-scrolled: rgba(255, 255, 255, 0.92);
+$hdr-text: #1d2129;
+$hdr-muted: #4e5969;
+$hdr-faint: #86909c;
+$hdr-indigo: #ff9f1a; // 强调橙（焦点/边框/阴影）
+$hdr-violet: #ffc53d; // 主黄
+$hdr-pink: #ff7a00; // 次强调橙
+$hdr-btn-grad: linear-gradient(135deg, #ffc53d, #ff9f1a);
+$hdr-load-grad: linear-gradient(90deg, #ffc53d, #ff9f1a, #ff7a00);
 
 // ---- 下载页 ----
-$dl-bg: #f8fafc;
-$dl-ink: #0b1a2e;
-$dl-muted: #475569;
-$dl-faint: #94a3b8;
-$dl-border: #e2e8f0;
-$dl-soft: #f1f5f9;
-$dl-blue: #2563eb;
-$dl-blue-deep: #1d4ed8;
-$dl-blue-hover: #2b6cf5;
-$dl-blue-deep-hover: #1a4bbf;
-$dl-indigo: #6366f1;
-$dl-btn-grad: linear-gradient(135deg, #2563eb, #1d4ed8);
-$dl-success: #22c55e;
+$dl-bg: #fafbfc;
+$dl-ink: #1d2129;
+$dl-muted: #4e5969;
+$dl-faint: #86909c;
+$dl-border: #f0f1f3;
+$dl-soft: #f7f8fa;
+$dl-blue: #ff9f1a; // 强调橙
+$dl-blue-deep: #e68a00;
+$dl-blue-hover: #ffc53d;
+$dl-blue-deep-hover: #ff9f1a;
+$dl-indigo: #ffc53d; // 主黄（光晕/辅助）
+$dl-btn-grad: linear-gradient(135deg, #ffc53d, #ff9f1a);
+$dl-success: #3ddc84;
 $dl-error: #ef4444;
-$dl-info: #3b82f6;
+$dl-info: #ff9f1a;
 
 // ---- 圆角 ----
 $radius-sm: 12px;
