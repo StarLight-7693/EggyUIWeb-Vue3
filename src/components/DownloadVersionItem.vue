@@ -1,28 +1,28 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import type { DownloadVersion } from '@/types/download'
+import { ref } from 'vue';
+import type { DownloadVersion } from '@/types/download';
 
 const props = defineProps<{
-  version: DownloadVersion
-  expanded: boolean
-}>()
+  version: DownloadVersion;
+  expanded: boolean;
+}>();
 
 const emit = defineEmits<{
-  toggle: []
-}>()
+  toggle: [];
+}>();
 
-type ImgState = 'placeholder' | 'image' | 'error'
+type ImgState = 'placeholder' | 'image' | 'error';
 
-const hasImage = !!props.version.image && props.version.image.trim() !== ''
-const imgState = ref<ImgState>(hasImage ? 'placeholder' : 'placeholder')
+const hasImage = !!props.version.image && props.version.image.trim() !== '';
+const imgState = ref<ImgState>(hasImage ? 'placeholder' : 'placeholder');
 
 function onImgLoad(e: Event) {
-  imgState.value = 'image'
-  void e
+  imgState.value = 'image';
+  void e;
 }
 
 function onImgError() {
-  imgState.value = 'error'
+  imgState.value = 'error';
 }
 </script>
 

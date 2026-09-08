@@ -6,4 +6,4 @@ export const SITE = {
   mainUrl: 'https://eggyui.skystarlight.top',
   /** Hexo 新闻站（news 子域） */
   newsUrl: 'https://eggyuinews.skystarlight.top',
-} as const
+} as const;

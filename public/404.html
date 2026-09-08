@@ -5,32 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>正在重定向…</title>
   <script>
-    // ============================================================
-    // GitHub Pages history 路由回退（配合 index.html 内联恢复脚本）
-    //
-    // 修复无限重定向：
-    //  - 不写死绝对路径（避免自定义域名根路径 / 项目页子路径不一致时
-    //    404 → 不存在路径 → 404 → … 死循环）；
-    //  - 改为“回到当前 URL 所在目录”（应用根目录），base-agnostic；
-    //  - 若本页本身就在应用根目录，则不再跳转，防止自循环。
-    //
-    // index.html 启动时读取 sessionStorage.redirect 并还原深链。
-    // ============================================================
-    ;(function () {
-      var path = window.location.pathname
-      var root = path.substring(0, path.lastIndexOf('/') + 1)
-      sessionStorage.setItem('redirect', window.location.href)
+    (function () {
+      var path = window.location.pathname;
+      var root = path.substring(0, path.lastIndexOf('/') + 1);
+      sessionStorage.setItem('redirect', window.location.href);
       if (root !== path) {
-        window.location.replace(root)
+        window.location.replace(root);
       }
     })()
   </script>
 </head>
 <body>
   <noscript>
-    <meta http-equiv="refresh" content="0;url=./" />
-    <p>本页面需要 JavaScript。若未被重定向，请
-      <a href="./">点此访问首页</a>。</p>
+    <p>本站需要开启JavaScript才能加载，请开启JavaScript。</p>
   </noscript>
 </body>
 </html>

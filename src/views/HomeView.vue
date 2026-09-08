@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { RouterLink } from 'vue-router'
-import indexVideo from '@/assets/videos/index.mp4'
-import eggRed from '@/assets/images/egg_red.webp'
-import { useScrollVideo } from '@/composables/useScrollVideo'
+import { ref } from 'vue';
+import { RouterLink } from 'vue-router';
+import indexVideo from '@/assets/videos/index.mp4';
+import eggRed from '@/assets/images/egg_red.webp';
+import { useScrollVideo } from '@/composables/useScrollVideo';
 
-const videoEl = ref<HTMLVideoElement | null>(null)
-const containerEl = ref<HTMLElement | null>(null)
-const loadingEl = ref<HTMLElement | null>(null)
-const hintEl = ref<HTMLElement | null>(null)
+const videoEl = ref<HTMLVideoElement | null>(null);
+const containerEl = ref<HTMLElement | null>(null);
+const loadingEl = ref<HTMLElement | null>(null);
+const hintEl = ref<HTMLElement | null>(null);
 
 // 首页核心：滚动逐帧同步视频（无任何数据请求）
 useScrollVideo({
@@ -16,10 +16,10 @@ useScrollVideo({
   container: containerEl,
   loading: loadingEl,
   hint: hintEl,
-})
+});
 
 function onCardImageLoaded(e: Event) {
-  ;(e.target as HTMLImageElement).classList.add('loaded')
+  (e.target as HTMLImageElement).classList.add('loaded');
 }
 </script>
 

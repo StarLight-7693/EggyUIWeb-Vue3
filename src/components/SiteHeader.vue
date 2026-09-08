@@ -1,128 +1,132 @@
 <script setup lang="ts">
-import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
-import { RouterLink, useRoute } from 'vue-router'
-import logo from '@/assets/images/logo.png'
-import { SITE } from '@/config'
+import { ref, watch, onMounted, onBeforeUnmount } from 'vue';
+import { RouterLink, useRoute } from 'vue-router';
+import logo from '@/assets/images/logo.png';
+import { SITE } from '@/config';
 
 // 原站 header.js 行为（TS 化）：汉堡开合 / ESC / 点外关闭 / 滚动 .scrolled / 加载进度条 / 按钮特效
-const navOpen = ref(false)
-const scrolled = ref(false)
-const progressActive = ref(false)
-const progressDone = ref(false)
-const progressWidth = ref(0)
-const btnPop = ref(false)
-const searchQuery = ref('')
+const navOpen = ref(false);
+const scrolled = ref(false);
+const progressActive = ref(false);
+const progressDone = ref(false);
+const progressWidth = ref(0);
+const btnPop = ref(false);
+const searchQuery = ref('');
 
-const route = useRoute()
+const route = useRoute();
 
 // 搜索 → 跳转新闻站本地搜索结果页（跨站，与新闻站 header 搜索行为一致）
 function submitSearch() {
-  const q = searchQuery.value.trim()
+  const q = searchQuery.value.trim();
   if (q) {
-    window.location.href = `${SITE.newsUrl}/search/?q=${encodeURIComponent(q)}`
+    window.location.href = `${SITE.newsUrl}/search/?q=${encodeURIComponent(q)}`;
   } else {
-    const input = document.querySelector<HTMLInputElement>('.search-wrapper input')
-    input?.focus()
+    const input = document.querySelector<HTMLInputElement>('.search-wrapper input');
+    input?.focus();
   }
 }
 
 function onSearchKeydown(e: KeyboardEvent) {
   if (e.key === 'Enter') {
-    e.preventDefault()
-    submitSearch()
+    e.preventDefault();
+    submitSearch();
   }
 }
 
 function setScrollLock(lock: boolean) {
-  document.body.style.overflow = lock ? 'hidden' : ''
+  document.body.style.overflow = lock ? 'hidden' : '';
 }
 
 function closeMenu() {
-  navOpen.value = false
-  setScrollLock(false)
+  navOpen.value = false;
+  setScrollLock(false);
 }
 
 function toggleMenu() {
-  navOpen.value = !navOpen.value
-  setScrollLock(navOpen.value)
+  navOpen.value = !navOpen.value;
+  setScrollLock(navOpen.value);
 }
 
 function startPop() {
-  btnPop.value = false
+  btnPop.value = false;
   requestAnimationFrame(() => {
-    btnPop.value = true
-    window.setTimeout(() => (btnPop.value = false), 350)
-  })
+    btnPop.value = true;
+    window.setTimeout(() => (btnPop.value = false), 350);
+  });
 }
 
-let progressTimer: number | undefined
+let progressTimer: number | undefined;
 
 function simulateLoading() {
-  if (progressTimer) window.clearInterval(progressTimer)
-  progressWidth.value = 0
-  progressActive.value = true
-  progressDone.value = false
-  let p = 0
+  if (progressTimer) window.clearInterval(progressTimer);
+  progressWidth.value = 0;
+  progressActive.value = true;
+  progressDone.value = false;
+  let p = 0;
   progressTimer = window.setInterval(() => {
-    p += 2
+    p += 2;
     if (p >= 100) {
-      p = 100
-      window.clearInterval(progressTimer)
-      progressTimer = undefined
-      finishProgress()
-      return
+      p = 100;
+      window.clearInterval(progressTimer);
+      progressTimer = undefined;
+      finishProgress();
+      return;
     }
-    progressWidth.value = p
-  }, 50)
+    progressWidth.value = p;
+  }, 50);
 }
 
 function finishProgress() {
-  progressWidth.value = 100
-  progressDone.value = true
+  progressWidth.value = 100;
+  progressDone.value = true;
   window.setTimeout(() => {
-    progressActive.value = false
-    progressDone.value = false
-    progressWidth.value = 0
-  }, 800)
+    progressActive.value = false;
+    progressDone.value = false;
+    progressWidth.value = 0;
+  }, 800);
 }
 
 function onScroll() {
-  scrolled.value = window.scrollY > 20
+  scrolled.value = window.scrollY > 20;
 }
 
 function onKeydown(e: KeyboardEvent) {
   if (e.key === 'Escape' && navOpen.value) {
-    closeMenu()
-    const btn = document.querySelector<HTMLButtonElement>('.hamburger')
-    btn?.focus()
+    closeMenu();
+    const btn = document.querySelector<HTMLButtonElement>('.hamburger');
+    btn?.focus();
   }
 }
 
 function onDocClick(e: MouseEvent) {
-  const header = document.querySelector<HTMLElement>('.glass-header')
-  if (navOpen.value && header && !header.contains(e.target as Node)) closeMenu()
+  const header = document.querySelector<HTMLElement>('.glass-header');
+  if (navOpen.value && header && !header.contains(e.target as Node)) {
+    closeMenu();
+  }
 }
 
 // 路由切换时关闭抽屉（替代原站整页跳转的收起逻辑）
 watch(
   () => route.fullPath,
   () => closeMenu(),
-)
+);
 
 onMounted(() => {
-  simulateLoading()
-  window.addEventListener('scroll', onScroll, { passive: true })
-  document.addEventListener('keydown', onKeydown)
-  document.addEventListener('click', onDocClick)
-  onScroll()
+  simulateLoading();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  document.addEventListener('keydown', onKeydown);
+  document.addEventListener('click', onDocClick);
+  onScroll();
 })
 
 onBeforeUnmount(() => {
-  if (progressTimer) window.clearInterval(progressTimer)
-  window.removeEventListener('scroll', onScroll)
-  document.removeEventListener('keydown', onKeydown)
-  document.removeEventListener('click', onDocClick)
-  setScrollLock(false)
+  if (progressTimer) {
+    window.clearInterval(progressTimer);
+  }
+  window.removeEventListener('scroll', onScroll);
+  document.removeEventListener('keydown', onKeydown);
+  document.removeEventListener('click', onDocClick);
+  setScrollLock(false);
 })
 </script>
 

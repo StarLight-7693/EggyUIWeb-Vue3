@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
-import { downloadMeta } from '@/data'
+import { RouterLink } from 'vue-router';
+import { downloadMeta } from '@/data';
 
-const versions = downloadMeta.versions || []
+const versions = downloadMeta.versions || [];
 </script>
 
 <template>

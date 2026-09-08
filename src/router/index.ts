@@ -1,7 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
-import DownloadView from '@/views/DownloadView.vue'
-import AboutView from '@/views/AboutView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '@/views/HomeView.vue';
+import DownloadView from '@/views/DownloadView.vue';
+import AboutView from '@/views/AboutView.vue';
 
 /**
  * history 路由；base 取自 vite.config.ts 的 BASE（GitHub Pages 子路径部署）。
@@ -17,8 +17,8 @@ const router = createRouter({
   ],
   scrollBehavior() {
     // 路由切换回到顶部
-    return { top: 0 }
-  },
-})
+    return { top: 0 };
+  }
+});
 
-export default router
+export default router;
