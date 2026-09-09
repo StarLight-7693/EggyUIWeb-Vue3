@@ -15,7 +15,7 @@ useScrollVideo({
   video: videoEl,
   container: containerEl,
   loading: loadingEl,
-  hint: hintEl,
+  hint: hintEl
 });
 
 function onCardImageLoaded(e: Event) {
