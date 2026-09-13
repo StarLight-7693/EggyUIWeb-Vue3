@@ -1,21 +1,41 @@
-<!DOCTYPE html>
+<!-- 这里不需要<!DOCTYPE html>，因为这个页面是404错误页面 -->
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>正在重定向…</title>
   <script>
-    (function () {
+    (function() {
       var path = window.location.pathname;
+
+      // 定义非法路径模式：以 .php/ 或 .php 结尾，或者包含 .php/ 的任意片段
+      // 例如：/test.php/foo、/dir/test.php、/test.php/、/test.php
+      // 也可扩展其他后端脚本后缀，如 .asp, .aspx, .jsp 等
+      var illegalPattern = /\.(php|asp|aspx|jsp|cgi|pl)(\/|$)/i;
+
+      // 若当前路径匹配非法模式，则强制跳转到根目录
+      if (illegalPattern.test(path)) {
+        // 记录原始 URL 供后续使用（可选）
+        sessionStorage.setItem('redirect', window.location.href);
+        // 跳转到根目录，并保留查询字符串和 hash（如果需要）
+        var root = '/';
+        // 可选：保留 hash 和 search，但通常 404 重定向到根不需要保留
+        // 这里直接跳转到根，不保留任何参数
+        window.location.replace(root);
+        return;
+      }
+
+      // 原有逻辑：处理正常路径（非非法路径）的重定向
       var root = path.substring(0, path.lastIndexOf('/') + 1);
       sessionStorage.setItem('redirect', window.location.href);
       if (root !== path) {
         window.location.replace(root);
       }
-    })()
+    })();
   </script>
 </head>
 <body>
+  <p>如果重定向没有开始，请<a href="/">点击此处</a>。</p>
   <noscript>
     <p>本站需要开启JavaScript才能加载，请开启JavaScript。</p>
   </noscript>

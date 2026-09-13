@@ -1,5 +1,10 @@
-# Vue 3 + TypeScript + Vite
+# EggyUIWeb-Vue3
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+![Last Commit](https://img.shields.io/github/last-commit/StarLight-7693/EggyUIWeb-Vue3?label=Last%20Commit)
+[![BiliBili](https://img.shields.io/badge/BiliBili-EggyUI-FF69B4?logo=bilibili&logoColor=F5F5F5)](https://space.bilibili.com/3546856390920620)]
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Stone Badge
+
+下面是这个仓库的[Stone Badge](https://stone.professorlee.work/)。
+
+![Stone Badge](https://stone.professorlee.work/api/stone/StarLight-7693/EggyUIWeb-Vue3)
