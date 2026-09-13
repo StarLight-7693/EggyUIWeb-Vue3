@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '@/views/HomeView.vue';
 import DownloadView from '@/views/DownloadView.vue';
 import AboutView from '@/views/AboutView.vue';
+import PersonalityTestView from '@/views/PersonalityTestView.vue';
 
 /**
  * history 路由；base 取自 vite.config.ts 的 BASE（GitHub Pages 子路径部署）。
@@ -13,6 +14,7 @@ const router = createRouter({
     { path: '/', name: 'home', component: HomeView },
     { path: '/download', name: 'download', component: DownloadView },
     { path: '/about', name: 'about', component: AboutView },
+    { path: '/about/personality-test', name: 'personality-test', component: PersonalityTestView },
     { path: '/:pathMatch(.*)*', redirect: '/' },
   ],
   scrollBehavior() {

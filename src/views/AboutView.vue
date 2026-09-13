@@ -25,6 +25,15 @@ const versions = downloadMeta.versions || [];
       <div class="layout">
         <!-- 主体 -->
         <main class="main">
+          <!-- 趣味小游戏入口 -->
+          <section class="card game-entry">
+            <div class="game-entry-text">
+              <h2>🎮 蛋仔专属性格测试</h2>
+              <p>几道关于日常性格与游戏习惯的小问题，测出最适配你的专属蛋仔角色。</p>
+            </div>
+            <RouterLink to="/about/personality-test" class="game-entry-btn">开始测试 🚀</RouterLink>
+          </section>
+
           <!-- 项目重要说明 -->
           <section class="card">
             <h2>📋 项目重要说明</h2>
@@ -145,7 +154,7 @@ const versions = downloadMeta.versions || [];
 
 .about-page {
   min-height: 100dvh;
-  background: linear-gradient(160deg, #fffdf6 0%, #fdf6e7 50%, #f9edda 100%);
+  background: $page-grad;
   padding: calc(#{$header-h} + 40px) 20px 56px;
 }
 
@@ -154,15 +163,13 @@ const versions = downloadMeta.versions || [];
   margin: 0 auto;
 }
 
-/* 卡片基底：白色圆角卡片 */
+/* 卡片基底：站点通用毛玻璃白卡 */
 .card {
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  border-radius: 24px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.05), 0 2px 8px rgba(0, 0, 0, 0.02);
+  @include glass($glass-card-bg, 10px, 1);
+  border: 1px solid $glass-card-border;
+  border-radius: $radius-card;
+  box-shadow: $shadow-float;
   padding: 28px 30px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 
   h2 {
     font-size: 1.25rem;
@@ -217,6 +224,44 @@ const versions = downloadMeta.versions || [];
     color: $dl-muted;
     line-height: 1.8;
   }
+}
+
+/* 趣味小游戏入口 */
+.game-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: linear-gradient(135deg, rgba(255, 197, 61, 0.16), rgba(255, 159, 26, 0.12));
+  border: 1px solid rgba(255, 159, 26, 0.25);
+
+  .game-entry-text {
+    h2 {
+      margin-bottom: 6px;
+    }
+
+    p {
+      color: $dl-muted;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+  }
+}
+
+.game-entry-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  background: $brand-grad;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 6px 18px rgba(255, 159, 26, 0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 /* 两栏布局 */
@@ -368,6 +413,13 @@ const versions = downloadMeta.versions || [];
 
   .layout {
     grid-template-columns: 1fr;
+  }
+}
+
+@include respond-below($bp-sm) {
+  .game-entry {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 

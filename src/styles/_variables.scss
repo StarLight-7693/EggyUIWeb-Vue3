@@ -60,6 +60,12 @@ $radius-full: 40px;
 $shadow-card: 0 2px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
 $shadow-float: 0 8px 40px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.02);
 
+// ---- 内页通用（暖奶油底色 + 毛玻璃白卡；关于/新闻/小游戏等内页复用）----
+$page-grad: linear-gradient(160deg, #fffdf6 0%, #fdf6e7 50%, #f9edda 100%);
+$glass-card-bg: rgba(255, 255, 255, 0.9);
+$glass-card-border: rgba(255, 255, 255, 0.7);
+$radius-card: 24px;
+
 // ---- 断点 ----
 $bp-lg: 1024px;
 $bp-md: 820px;
