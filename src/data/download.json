@@ -6,27 +6,11 @@
       "id": "eggyui-legacy",
       "type": "EggyUI-Legacy",
       "version": "v3.5",
-      "fileSize": "72.00 GB（包含全部版本）",
+      "fileSize": "6.49 GB",
       "updateDate": "2026-05-25",
       "description": "EggyUI项目的历史版本（即EggyUI 1.0~3.5）已更名为EggyUI-Legacy。",
       "image": "https://img.remit.ee/i/zI8bP9bB5wCu",
       "downloadUrl": "https://www.123pan.com/s/BWy7Td-ObpD3"
-    },
-    {
-      "id": "eggyui-os",
-      "type": "EggyUI-OS",
-      "version": "v1.0",
-      "description": "敬请期待。",
-      "image": "https://img.remit.ee/i/e4jsBtoo5ljl"
-    },
-    {
-      "id": "eggyui-pe",
-      "type": "EggyUI-PE",
-      "version": "v3.0",
-      "fileSize": "693.19 MB",
-      "updateDate": "2025-04-26",
-      "description": "蛋仔风格的Windows PE，目前正在开发新版本。",
-      "image": "https://img.remit.ee/i/6aakwFHLO2Bx"
     },
     {
       "id": "eggyui-re",
@@ -34,6 +18,43 @@
       "version": "v1.0",
       "description": "敬请期待。",
       "image": "https://img.remit.ee/i/68SjqigbuR8x"
+    },
+    {
+      "id": "eggyui-liunx",
+      "type": "EggyUI-Liunx",
+      "fileSize": "65.85 GB（包含全部版本）",
+      "updateDate": "2026-09-25",
+      "downloadUrl": "https://1843695941.share.123pan.cn/123pan/BWy7Td-1lzS3",
+      "description": "EggyUI的Liunx版本，由“一个玩VM和MC的ZSS”开发。",
+      "image": "https://img.remit.ee/i/e4jsBtoo5ljl"
+    },
+    {
+      "id": "eggyui-re-air",
+      "type": "EggyUI-RE-Air",
+      "fileSize": "29.41 GB（包含全部版本）",
+      "updateDate": "2026-09-25",
+      "downloadUrl": "https://1843695941.share.123pan.cn/123pan/BWy7Td-x7Q73",
+      "description": "基于原版Windows极限精简外加美化制作而成的EggyUI，用尽可能小的体积塞下完整的美化特性，适合在低配设备上使用。",
+      "image": "https://img.remit.ee/i/n94sReyXbB3n"
+    },
+    {
+      "id": "eggyui-air",
+      "type": "EggyUI-Air",
+      "version": "v3.5",
+      "fileSize": "4.27 GB",
+      "updateDate": "2026-09-23",
+      "description": "与EggyUI-RE-Air类似，但精简程度相对保守，以保持系统可用性。即将发布。",
+      "image": "https://img.remit.ee/i/ViLdB429lEAc"
+    },
+    {
+      "id": "eggyui-pe",
+      "type": "EggyUI-PE",
+      "version": "v11.0",
+      "fileSize": "951.22 MB",
+      "updateDate": "2026-09-25",
+      "downloadUrl": "https://1843695941.share.123pan.cn/123pan/BWy7Td-E6lS3",
+      "description": "蛋仔风格的Windows PE。",
+      "image": "https://img.remit.ee/i/6aakwFHLO2Bx"
     }
   ]
 }
