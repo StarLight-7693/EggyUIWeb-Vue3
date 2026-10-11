@@ -4,6 +4,10 @@
 ![License](https://img.shields.io/badge/License-AGPL--3.0-orange)
 ![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Pages-222222)
 
+> [!INFO]
+>
+> 本仓库将在 EggyUI 官网于 2026 年 10 月 14 日关闭后归档。
+
 ## 项目简介
 
 EggyUIWeb-Vue3 是 EggyUI 官网的主站部分，负责承载 EggyUI 项目的对外展示与资源导航等核心功能。作为官网的主站，它是用户了解 EggyUI、获取项目动态与下载资源的主要入口。
